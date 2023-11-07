@@ -54,6 +54,7 @@ export default function Identity() {
               type="radio"
               name="check"
               id="first"
+              readOnly
               checked={active === 0}
             />
             <div className="label label-1">
@@ -67,6 +68,7 @@ export default function Identity() {
               type="radio"
               name="check"
               id="second"
+              readOnly
               checked={active === 1}
             />
             <div className="label label-2">
@@ -80,6 +82,7 @@ export default function Identity() {
               type="radio"
               name="check"
               id="third"
+              readOnly
               checked={active === 2}
             />
             <div className="label label-3">
@@ -97,6 +100,7 @@ export default function Identity() {
               type="radio"
               name="check"
               id="first"
+              readOnly
               checked={active === 0}
             />
             <div className="control"></div>
@@ -106,6 +110,7 @@ export default function Identity() {
               type="radio"
               name="check"
               id="second"
+              readOnly
               checked={active === 1}
             />
             <div className="control"></div>
@@ -115,6 +120,7 @@ export default function Identity() {
               type="radio"
               name="check"
               id="third"
+              readOnly
               checked={active === 2}
             />
             <div className="control"></div>
