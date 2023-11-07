@@ -7,6 +7,7 @@
 @import "story";
 @import "faq";
 @import "identity";
+@import "brand";
 
 html {
     font-size: 16px;
@@ -46,7 +47,7 @@ body {
     align-items: center;
     gap: 1rem;
     justify-content: center;
-    padding: 0 8.75rem 0 8.75rem;
+    padding: 0 10% 0 10%;
     color: $blue-1;
     box-sizing: border-box;
 
@@ -146,7 +147,8 @@ body {
         gap: 0.75rem;
     }
 }
-.active-overlay{
+
+.active-overlay {
     transform: translateX(0);
 }
 
@@ -192,7 +194,8 @@ body {
     background-color: $blue-3;
     border: 1px solid $blue-3;
 }
-.fifth{
+
+.fifth {
     color: $golden-1;
     background-color: transparent;
     border: 1px solid $golden-1;
@@ -302,7 +305,7 @@ body {
     background-color: $black-1;
     color: $blue-3;
     box-sizing: border-box;
-    padding: 5rem 8.75rem 3.5rem 8.75rem;
+    padding: 5rem 10% 3.5rem 10%;
 
     .container {
         display: flex;
@@ -469,7 +472,7 @@ body {
 .apps {
     display: flex;
     width: 100%;
-    padding: 3.75rem 8.75rem;
+    padding: 3.75rem 10%;
     flex-direction: column;
     align-items: flex-start;
     gap: 3.125rem;
@@ -574,7 +577,7 @@ body {
 .cases {
     display: flex;
     width: 100%;
-    padding: 3.75rem 8.75rem;
+    padding: 3.75rem 10%;
     flex-direction: column;
     align-items: center;
     gap: 3.125rem;
