@@ -38,6 +38,7 @@ body {
 }
 
 .navbar {
+    position: relative;
     min-height: 5rem;
     height: 5rem;
     width: 100%;
@@ -48,6 +49,29 @@ body {
     padding: 0 8.75rem 0 8.75rem;
     color: $blue-1;
     box-sizing: border-box;
+
+    @media screen and (max-width: 960px) {
+        display: flex;
+        padding: 0rem 1rem;
+        justify-content: space-between;
+    }
+}
+
+.overlay {
+    position: absolute;
+    background-color: $blue-1;
+    right: 0;
+    display: flex;
+    width: 17.5rem;
+    height: 100vh;
+    padding: 1.5rem 1.25rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.5rem;
+    top:0;
+    z-index: 20;
 }
 
 .button {
@@ -122,10 +146,11 @@ body {
             border-bottom: 1px solid;
         }
     }
+
     .dropdown {
         position: relative;
         display: inline-block;
-    
+
         .list {
             display: none;
             max-height: 50vh;
@@ -140,7 +165,7 @@ body {
             background-color: $golden-1;
             border-top: .5rem solid $white-2;
             z-index: 10;
-           
+
             .list-item {
                 cursor: pointer;
                 display: flex;
@@ -152,37 +177,39 @@ body {
                 color: $blue-1;
                 font-size: 1rem;
                 font-weight: 500;
-    
+
                 .inner {
                     p {
                         margin: 0;
                         font-size: 0.625rem;
                     }
                 }
-    
+
                 span {
                     text-decoration: underline;
                 }
+
                 img {
                     width: 1.5rem;
                 }
             }
-    
+
             .list-item:first-child {
                 padding-top: 0;
             }
-    
+
             .list-item:last-child {
                 border: none;
                 padding-bottom: 0;
             }
         }
+
         &:active,
         &:focus,
-        &:hover .list{
+        &:hover .list {
             display: block;
         }
-        
+
     }
 }
 
