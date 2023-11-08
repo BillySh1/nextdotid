@@ -7,7 +7,7 @@ export default function Apps() {
           <br />
           <span>with Universal Profile SDK</span>
         </div>
-        <div>
+        <div className="subtitle">
           A <span>Universal Profile SDK</span> to connect users across Web2 and
           Web3
         </div>

@@ -37,7 +37,7 @@ export default function UseCases() {
           </div>
           <div className="container">
             <div className="common-title">Authentic User Assurance</div>
-            <div  className="common-content">
+            <div className="common-content">
               Combat sybil attacks effectively. Attract genuine users to your
               applications and protocols, ensuring a safer, more credible Web3
               community.
@@ -48,7 +48,7 @@ export default function UseCases() {
         <div className="right">
           <div className="item">
             <div className="common-title">Unified Identity Portfolio</div>
-            <div  className="common-content">
+            <div className="common-content">
               Craft futuristic profiles akin to Web3.bio. Centralize essential
               identities for easy access, creating a one-stop digital identity
               hub.
@@ -56,7 +56,7 @@ export default function UseCases() {
           </div>
           <div className="item">
             <div className="common-title">Community Growth Toolkit</div>
-            <div  className="common-content">
+            <div className="common-content">
               Discover hotspots of potential user personas and activity with the
               Relation Service. Unlock targeted engagement and grow your
               community strategically
@@ -64,14 +64,14 @@ export default function UseCases() {
           </div>
           <div className="item">
             <div className="common-title">Cross-chain User Analytics:</div>
-            <div  className="common-content">
+            <div className="common-content">
               Harness rich user insights from an expansive mapping across Web2 &
               Web3. Build analytics products with comprehensive social graph
               analytics.
             </div>
           </div>
           <div className="item">
-            <div className="common-title">UUniversal Gaming Passport</div>
+            <div className="common-title">Universal Gaming Passport</div>
             <div className="common-content">
               Deploy a native decentralized identity across diverse on-chain
               games. Elevate your gaming persona, accumulating reputation

@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import SVG from "react-inlinesvg";
 
 const FAQRenderMap = [
   {
@@ -13,6 +14,10 @@ const FAQRenderMap = [
     ),
     content: () => (
       <div className="faq-body">
+        <div className="paragraph left">
+          A DID is a concept and technical standard for managing and
+          representing personal identity information
+        </div>
         <div className="row">
           <div className="badge">Technical Standard</div>
           <div className="paragraph">
@@ -307,14 +312,51 @@ const FAQRenderMap = [
 
 export default function FAQ() {
   const [activeIndexes, setActiveIndexes] = useState([0]);
+  const [showToTop, setShowToTop] = useState(false);
   const toggleExpand = (idx: number) => {
     if (!activeIndexes.includes(idx)) setActiveIndexes([...activeIndexes, idx]);
     else {
       setActiveIndexes(activeIndexes.filter((x) => x !== idx));
     }
   };
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (
+        (document.body.scrollTop > 800 ||
+          document.documentElement.scrollTop > 800) &&
+        !showToTop
+      ) {
+        setShowToTop(true);
+      }
+      if (
+        !(
+          document.body.scrollTop > 800 ||
+          document.documentElement.scrollTop > 800
+        )
+      ) {
+        setShowToTop(false);
+      }
+    });
+    return window.removeEventListener("wheel", () => {});
+  }, [showToTop]);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="relative flex min-h-screen flex-col items-center justify-between">
+      {showToTop && (
+        <SVG
+          onClick={() => {
+            document.body.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+            document.documentElement.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+          className="scroll-to-top"
+          src={"imgs/faq/scroll.svg"}
+        />
+      )}
       <div className="faq">
         <div className="title">
           Frequently Asked <span>Questions</span>
@@ -327,12 +369,7 @@ export default function FAQ() {
           and our team will contact you. You may also join us in{" "}
           <Link href={"https://t.me/NextDotIDofficial/1"} target="_blank">
             Telegram
-            <Image
-              width={14}
-              height={14}
-              src="imgs/arrow-right-up.svg"
-              alt=""
-            />
+            <SVG width={14} height={14} src="imgs/arrow-right-up.svg" />
           </Link>
         </div>
         {FAQRenderMap.map((x, idx) => {
@@ -357,23 +394,23 @@ export default function FAQ() {
                   alt=""
                 />{" "}
               </div>
-              {activeIndexes.includes(idx) && (
+              {(activeIndexes.includes(idx) && (
                 <div className="faq-content">{x.content()}</div>
-              )}
+              )) || <div className="space"></div>}
             </div>
           );
         })}
-        <div className="banner">
-          <div className="text">
-            Still confused? We’ll get back to you after filling out <br />
-            <Link href={""} target="_blank">
-              this form
-            </Link>{" "}
-            or simply join our{" "}
-            <Link href={"https://t.me/NextDotIDofficial/1"} target="_blank">
-              Telegram.
-            </Link>
-          </div>
+      </div>
+      <div className="banner">
+        <div className="text">
+          Still confused? We’ll get back to you after filling out <br />
+          <Link href={""} target="_blank">
+            this form
+          </Link>{" "}
+          or simply join our{" "}
+          <Link href={"https://t.me/NextDotIDofficial/1"} target="_blank">
+            Telegram.
+          </Link>
         </div>
       </div>
     </main>

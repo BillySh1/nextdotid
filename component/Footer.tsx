@@ -1,13 +1,16 @@
+"use client";
+import useMatchBreakpoints from "@/utils/hooks";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
+  const isMobile = useMatchBreakpoints();
   return (
     <div className="footer">
       <div className="container">
         <div className="wrapper">
           <Link href={"/"}>
-            <Image
+            <img
               className={"logo"}
               width={62}
               height={34}
@@ -18,20 +21,36 @@ export default function Footer() {
           <div className="grid">
             <div className="item-1">
               <div className="grid-item ">Product</div>
-              <div className="subtitle">
-                Universal Profile SDK <span className="dot">•</span>{" "}
-                <Link href={"https://web3.bio"} target="_blank">
-                  Web3 Bio
-                </Link>
-                <span className="dot">•</span>{" "}
-                <Link href={"https://mask.io"} target="_blank">
-                  Mask Extension for X
-                </Link>{" "}
-                <span className="dot">•</span>{" "}
-                <Link href={"https://firefly.land"} target="_blank">
-                  Firefly App
-                </Link>
-              </div>
+              {isMobile ? (
+                <div className="subtitle">
+                  <div> Universal Profile SDK</div>
+                  <Link href={"https://web3.bio"} target="_blank">
+                    Web3 Bio
+                  </Link>
+
+                  <Link href={"https://mask.io"} target="_blank">
+                    Mask Extension for X
+                  </Link>
+                  <Link href={"https://firefly.land"} target="_blank">
+                    Firefly App
+                  </Link>
+                </div>
+              ) : (
+                <div className="subtitle">
+                  Universal Profile SDK <span className="dot">•</span>{" "}
+                  <Link href={"https://web3.bio"} target="_blank">
+                    Web3 Bio
+                  </Link>
+                  <span className="dot">•</span>{" "}
+                  <Link href={"https://mask.io"} target="_blank">
+                    Mask Extension for X
+                  </Link>{" "}
+                  <span className="dot">•</span>{" "}
+                  <Link href={"https://firefly.land"} target="_blank">
+                    Firefly App
+                  </Link>
+                </div>
+              )}
             </div>
             <Link
               href={"https://medium.com/@Next.ID?utm_source=nextid"}
@@ -72,47 +91,43 @@ export default function Footer() {
         <div className="bottom">
           <div>Copyright 2023 © Next.ID | All rights reserved</div>
           <div className="icons">
-            <Link href={'https://twitter.com/NextDotID'}>
-            <Image
-              className="icon"
-              width={32}
-              height={32}
-              src={"imgs/twitter.svg"}
-              alt=""
-            /></Link>
-          
-          <Link href={'https://twitter.com/NextDotID'}>
-            <Image
-              className="icon"
-              width={32}
-              height={32}
-              src={"imgs/facebook.svg"}
-              alt=""
-            /></Link>
-          <Link href={'https://twitter.com/NextDotID'}>
-            <Image
-              className="icon"
-              width={32}
-              height={32}
-              src={"imgs/instagram.svg"}
-              alt=""
-            /></Link>
-           <Link href={'https://twitter.com/NextDotID'}>
-            <Image
-              className="icon"
-              width={32}
-              height={32}
-              src={"imgs/youtube.svg"}
-              alt=""
-            /></Link>
-          <Link href={'https://twitter.com/NextDotID'}>
-            <Image
-              className="icon"
-              width={32}
-              height={32}
-              src={"imgs/pinterest.svg"}
-              alt=""
-            /></Link>
+            <Link href={"https://twitter.com/NextDotID"}>
+              <Image
+                className="icon"
+                width={32}
+                height={32}
+                src={"imgs/x.svg"}
+                alt=""
+              />
+            </Link>
+
+            <Link href={"https://twitter.com/NextDotID"}>
+              <Image
+                className="icon"
+                width={32}
+                height={32}
+                src={"imgs/github.svg"}
+                alt=""
+              />
+            </Link>
+            <Link href={"https://twitter.com/NextDotID"}>
+              <Image
+                className="icon"
+                width={32}
+                height={32}
+                src={"imgs/medium.svg"}
+                alt=""
+              />
+            </Link>
+            <Link href={"https://twitter.com/NextDotID"}>
+              <Image
+                className="icon"
+                width={32}
+                height={32}
+                src={"imgs/telegram.svg"}
+                alt=""
+              />
+            </Link>
           </div>
         </div>
       </div>

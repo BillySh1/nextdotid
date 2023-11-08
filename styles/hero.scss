@@ -4,6 +4,10 @@
     height: calc(100vh - 5rem);
 
     .float-banner {
+        @media screen and (max-width:960px) {
+            display: none;
+        }
+
         position: absolute;
         font-weight: 400;
         top: 0;
@@ -23,14 +27,31 @@
     }
 
     .hero-content {
+        @media screen and (max-width: 768px) {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 3.75rem 1rem;
+            box-sizing: border-box;
+            top: 0;
+            left: 0;
+            gap: 0;
+        }
+
         position: absolute;
         display: flex;
         flex-direction: column;
-        top: 11.5rem;
-        left: 5rem;
+        top: 20.5%;
+        left: 6%;
         gap: 2rem;
 
         .hero-title {
+            @media screen and (max-width: 768px) {
+                font-size: 2.5rem;
+            }
+
+            font-family: var(--font-title);
+            font-variation-settings: 'wdth'150;
             font-size: 4.125rem;
             font-weight: 500;
             line-height: 1.1;
@@ -39,9 +60,15 @@
         }
 
         .sub-title {
+            @media screen and (max-width: 768px) {
+                margin-top: 2rem;
+                font-size: 1.375rem;
+            }
+
+            font-family: var(--font-text);
             color: $blue-1;
             font-size: 1.375rem;
-            font-weight: 400;
+            font-weight: 300;
             line-height: 1.4;
             letter-spacing: 0em;
             text-align: left;
@@ -49,24 +76,67 @@
         }
 
         .btn-group {
+            @media screen and (max-width: 768px) {
+                position: absolute;
+                padding-right: 1rem;
+                justify-content: flex-start;
+                bottom: 6.75rem;
+                width: 100%;
+                flex-wrap: wrap;
+
+                a {
+                    min-width: 10rem;
+                    max-width: 45%;
+                    width: 100%;
+
+                    .button {
+                        width: 100%;
+                    }
+                }
+            }
+
             display: flex;
             align-items: center;
             gap: 1rem;
 
         }
 
+
     }
 
     .hero-image {
+        @media screen and (max-width:960px) {
+            right: -30%;
+            width: 80vmax;
+            top: 5%;
+        }
+
+        @media screen and (max-width:768px) {
+            right: -50%;
+            width: 70vmax;
+            top: 10%;
+        }
+        @media screen and (max-width:540px) {
+            right: -66%;
+            width: 60vmax;
+            top: 15%;
+        }
+
         position: absolute;
         width: auto;
-        height: 80%;
+        height: 85%;
         right: 3%;
         top: 3%;
-        z-index: 1;
+        z-index: 0;
+
     }
 
     .hero-scroll {
+        @media screen and (max-width:768px) {
+            height: 3.125rem;
+
+        }
+
         position: absolute;
         bottom: 0;
         background: $golden-1;
@@ -91,6 +161,10 @@
             margin: 0 2rem;
 
             .icon {
+                @media screen and (max-width:768px) {
+                    height: 1.5rem;
+
+                }
                 height: 2.25rem;
                 width: auto;
             }
