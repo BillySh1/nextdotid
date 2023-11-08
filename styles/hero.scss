@@ -111,15 +111,15 @@
             top: 5%;
         }
 
-        @media screen and (max-width:768px) {
+        @media screen and (max-width:600px) {
             right: -50%;
             width: 70vmax;
             top: 10%;
         }
-        @media screen and (max-width:540px) {
-            right: -66%;
-            width: 60vmax;
-            top: 15%;
+        @media screen and (max-width:480px) {
+            right: -55%;
+            width: 65vmax;
+            top: 12%;
         }
 
         position: absolute;

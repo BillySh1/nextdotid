@@ -25,7 +25,7 @@ export default function Navbar() {
       setShowOverlay(false);
     });
   }, [showOverlay]);
-  return (!isMobile && !isTablet) ? (
+  return (!isMobile) ? (
     <div className="navbar">
       <Link href={"/"}>
         <Image
@@ -37,13 +37,13 @@ export default function Navbar() {
         />
       </Link>
       <Menu />
-      <Link href={"https://mask.io"} target="_blank">
+      <Link className="link-btn" href={"https://mask.io"} target="_blank">
         <Button variant="primary">
           MASK NETWORK
           <SVG width={20} height={20} src="imgs/arrow-right.svg" />
         </Button>
       </Link>
-      <Link href={"https://web3.bio/"} target="_blank">
+      <Link className="link-btn" href={"https://web3.bio/"} target="_blank">
         <Button variant="secondary">
           WEB3.BIO
           <SVG width={20} height={20} src="imgs/arrow-right-up.svg" />
