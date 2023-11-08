@@ -42,9 +42,11 @@
     .banner {
         width: 100%;
         display: flex;
+        background: transparent;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 0;
         gap: 1.75rem;
 
         .container {
