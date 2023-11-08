@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import SVG from "react-inlinesvg";
 
 export default function Navbar() {
-  const { isMobile } = useMatchBreakpoints();
+  const { isMobile, isTablet } = useMatchBreakpoints();
   const mobileMenu = useRef<any>(null);
   const [showOverlay, setShowOverlay] = useState(false);
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Navbar() {
       setShowOverlay(false);
     });
   }, [showOverlay]);
-  return !isMobile ? (
+  return (!isMobile && !isTablet) ? (
     <div className="navbar">
       <Link href={"/"}>
         <Image

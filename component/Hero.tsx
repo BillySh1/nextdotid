@@ -1,9 +1,12 @@
-import Image from "next/image";
+"use client";
 import Link from "next/link";
 import Button from "./Button";
+import SVG from "react-inlinesvg";
 import { scrollPartners } from "@/utils/constants";
+import useMatchBreakpoints from "@/utils/hooks";
 
 export default function Hero() {
+  const { isMobile } = useMatchBreakpoints();
   return (
     <div className="hero">
       <div className="float-banner">
@@ -16,11 +19,7 @@ export default function Hero() {
           Mask Extension
         </Link>
       </div>
-      <img
-        className="hero-image"
-        src={"/imgs/hero-image.svg"}
-        alt="hero"
-      />
+      <img className="hero-image" src={"/imgs/hero-image.svg"} alt="hero" />
       <div className="hero-content">
         <div className="hero-title">{"Bridge Users'"}</div>
         <div
@@ -31,9 +30,9 @@ export default function Hero() {
         >
           Wallet Address
         </div>
-        <div className="hero-title">For Mass Adoption</div>
+        <div className="hero-title">For Mass {isMobile && <br/>} Adoption</div>
         <div className="sub-title">
-          Plug in the largest identity graph across Web2 and Web3 <br /> in 5
+          Plug in the largest identity graph {isMobile && <br/>} across Web2 and Web3 <br /> in 5
           seconds.
         </div>
         <div className="btn-group">
@@ -48,12 +47,7 @@ export default function Hero() {
               }}
             >
               {"LET'S TALK"}
-              <Image
-                width={20}
-                height={20}
-                src="imgs/arrow-right-up.svg"
-                alt=""
-              />
+              <SVG width={20} height={20} src="imgs/arrow-right-up.svg" />
             </Button>
           </Link>
           <Link
@@ -62,12 +56,7 @@ export default function Hero() {
           >
             <Button variant="secondary">
               DOCS
-              <Image
-                width={20}
-                height={20}
-                src="imgs/arrow-right-up.svg"
-                alt=""
-              />
+              <SVG width={20} height={20} src="imgs/arrow-right-up.svg" />
             </Button>
           </Link>
         </div>

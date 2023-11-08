@@ -209,8 +209,14 @@ body {
     font-size: 1rem;
     gap: 1rem;
     padding: 0 3.75rem;
-
+    @media screen and (max-width:1140px) {
+            padding: 0 1rem;
+            gap: .5rem;
+    }
     .menu-item {
+        @media screen and (max-width:1140px) {
+            padding: 0 .2rem;
+    }
         box-sizing: border-box;
         padding: 0 .5rem;
         border-bottom: 1px transparent;
@@ -220,6 +226,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        white-space: nowrap;
         gap: .625rem;
         cursor: pointer;
         border-bottom: 1px solid transparent;
