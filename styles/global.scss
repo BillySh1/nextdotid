@@ -530,6 +530,9 @@ body {
 }
 
 .title {
+    @media screen and (max-width: 640px) {
+       font-size: 2rem;
+    }
     font-family: var(--font-title);
     font-variation-settings: 'wdth'150;
     color: $blue-1;
