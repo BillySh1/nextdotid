@@ -45,7 +45,7 @@ export default function Identity() {
         <div className="title">
           Radical Identity <span>Solutions</span> for <span>Radical Apps</span>
         </div>
-        <div>Crafting Revolutionary Identities for Modern Applications</div>
+        <div className="subtitle">Crafting Revolutionary Identities for Modern Applications</div>
       </div>
       <div className="banner">
         <form className="container">
