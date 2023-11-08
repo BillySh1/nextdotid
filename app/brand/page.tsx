@@ -1,6 +1,7 @@
 import Button from "@/component/Button";
 import Link from "next/link";
 import SVG from "react-inlinesvg";
+import Clipboard from "react-clipboard.js";
 
 export default function BrandPage() {
   const dontsMap = [
@@ -256,12 +257,14 @@ export default function BrandPage() {
                   </Button>
                   <div className="code">
                     <p>{x.key} </p>
-                    <SVG
+                    <Clipboard
+                      component="div"
                       className="action"
-                      width={16}
-                      height={16}
-                      src="imgs/brand/copy.svg"
-                    />
+                      data-clipboard-text={x.key}
+                      onSuccess={()=>{}}
+                    >
+                      <SVG width={16} height={16} src="imgs/brand/copy.svg" />
+                    </Clipboard>
                   </div>
                 </div>
               </div>

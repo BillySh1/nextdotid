@@ -18,7 +18,7 @@ const FAQRenderMap = [
           A DID is a concept and technical standard for managing and
           representing personal identity information
         </div>
-        <div className="row">
+        <div className="faq-row">
           <div className="badge">Technical Standard</div>
           <div className="paragraph">
             A technical standard is a collectively agreed-upon set of guidelines
@@ -34,7 +34,7 @@ const FAQRenderMap = [
             interoperability in the broader email ecosystem.
           </div>
         </div>
-        <div className="row">
+        <div className="faq-row">
           <div className="badge">DID Standard</div>
           <div className="paragraph">
             Decentralized identity, also known as self-sovereign identity, is an
@@ -284,7 +284,7 @@ const FAQRenderMap = [
           working on it, most of them are developers who have years of
           experience in Web2 and Web3.
         </div>
-        <div className="row">
+        <div className="faq-row">
           <img src="imgs/faq/faq-3.svg" alt="" />
           <img src="imgs/faq/faq-4.svg" alt="" />
         </div>
