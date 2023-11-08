@@ -80,13 +80,15 @@
                 position: absolute;
                 padding-right: 1rem;
                 justify-content: flex-start;
-                bottom: 8.75rem;
+                bottom: 6.75rem;
                 width: 100%;
                 flex-wrap: wrap;
+
                 a {
                     min-width: 10rem;
                     max-width: 45%;
                     width: 100%;
+
                     .button {
                         width: 100%;
                     }
@@ -111,6 +113,11 @@
 
         @media screen and (max-width:768px) {
             right: -50%;
+            width: 70vmax;
+            top: 10%;
+        }
+        @media screen and (max-width:540px) {
+            right: -66%;
             width: 60vmax;
             top: 15%;
         }
@@ -125,6 +132,11 @@
     }
 
     .hero-scroll {
+        @media screen and (max-width:768px) {
+            height: 3.125rem;
+
+        }
+
         position: absolute;
         bottom: 0;
         background: $golden-1;
@@ -149,6 +161,10 @@
             margin: 0 2rem;
 
             .icon {
+                @media screen and (max-width:768px) {
+                    height: 1.5rem;
+
+                }
                 height: 2.25rem;
                 width: auto;
             }
