@@ -8,10 +8,12 @@ import { useEffect, useRef, useState } from "react";
 import SVG from "react-inlinesvg";
 
 export default function Navbar() {
-  const { isMobile, isTablet } = useMatchBreakpoints();
+  const { isMobile } = useMatchBreakpoints();
   const mobileMenu = useRef<any>(null);
+  const [mobile, setMobile] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
   useEffect(() => {
+    setMobile(isMobile);
     document.addEventListener("click", (e) => {
       if (showOverlay && mobileMenu.current) {
         if (!mobileMenu.current.contains(e.target)) {
@@ -24,8 +26,8 @@ export default function Navbar() {
     return document.removeEventListener("click", () => {
       setShowOverlay(false);
     });
-  }, [showOverlay]);
-  return (!isMobile) ? (
+  }, [showOverlay, isMobile]);
+  return !mobile ? (
     <div className="navbar">
       <Link href={"/"}>
         <Image
@@ -85,27 +87,46 @@ export default function Navbar() {
             Products <SVG className="icon" src={"imgs/arrow-down.svg"} />
           </div>
           <div className="sub-menu">
-            <Link href={"https://api.web3.bio"} className="sub-item">
+            <Link
+              href={"https://api.web3.bio"}
+              target="_blank"
+              className="sub-item"
+            >
               Universal Profile SDK
             </Link>
-            <Link href={"https://web3.bio"} className="sub-item">
+            <Link
+              href={"https://web3.bio"}
+              target="_blank"
+              className="sub-item"
+            >
               <span> Web3 Bio</span>
             </Link>
-            <Link href={"https://mask.io"} className="sub-item">
+            <Link href={"https://mask.io"} target="_blank" className="sub-item">
               <span>Mask Extension</span> for X<br />
               <p>(formerly Twitter)</p>
             </Link>
-            <Link href={"https://firefly.land"} className="sub-item">
+            <Link
+              href={"https://firefly.land"}
+              target="_blank"
+              className="sub-item"
+            >
               <span>Firefly App</span>
             </Link>
           </div>
           <div className="divider" />
-          <Link href={"/faq"} className="mobile-menu-item">
+          <Link
+            href={"/faq"}
+            onClick={() => {
+              setShowOverlay(false);
+            }}
+            className="mobile-menu-item"
+          >
             FAQ <SVG className="icon" src={"imgs/arrow-right.svg"} />
           </Link>
           <div className="divider" />
           <Link
             href={'"https://mirror.xyz/nextid.eth"'}
+            target="_blank"
             className="mobile-menu-item"
           >
             Community <SVG className="icon" src={"imgs/arrow-right.svg"} />
@@ -113,34 +134,47 @@ export default function Navbar() {
           <div className="divider" />
 
           <Link
+            target="_blank"
             href={"https://medium.com/@Next.ID?utm_source=nextid"}
             className="mobile-menu-item"
           >
             Blog <SVG className="icon" src={"imgs/arrow-right.svg"} />
           </Link>
           <div className="divider" />
-          <Link href={"/story"} className="mobile-menu-item">
+          <Link
+            href={"/story"}
+            onClick={() => {
+              setShowOverlay(false);
+            }}
+            className="mobile-menu-item"
+          >
             Our Story <SVG className="icon" src={"imgs/arrow-right.svg"} />
           </Link>
         </div>
         <div className="overlay-footer">
           <div>Experience Next.ID with:</div>
-          <Button
+          <Link
             style={{
               width: "100%",
             }}
-            variant="third"
+            href={"https://mask.io"}
+            target="_blank"
           >
-            MASK NETWORK <SVG src="imgs/arrow-right.svg" />
-          </Button>
-          <Button
+            <Button variant="third">
+              MASK NETWORK <SVG src="imgs/arrow-right.svg" />
+            </Button>
+          </Link>
+          <Link
             style={{
               width: "100%",
             }}
-            variant="fifth"
+            href={"https://web3.bio"}
+            target="_blank"
           >
-            WEB.BIO <SVG src="imgs/arrow-right.svg" />
-          </Button>
+            <Button variant="fifth">
+              WEB.BIO <SVG src="imgs/arrow-right.svg" />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

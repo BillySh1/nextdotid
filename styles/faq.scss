@@ -117,13 +117,30 @@
 
             .grid {
                 width: 100%;
+                max-width: 100%;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: repeat(3, 1fr);
                 grid-column-gap: 20px;
                 grid-row-gap: 20px;
 
+                @media screen and (max-width:600px) {
+                    display: flex;
+                    grid-column-gap: unset;
+                    grid-row-gap: unset;
+                    gap: 1.875rem;
+                    flex-direction: column;
+
+                }
+
                 .grid-item {
+
+                    @media screen and (max-width:600px) {
+                        min-width: calc(100vw - 1.875rem);
+                        border: 1rem 1.25rem;
+                        min-height: 18rem;
+                    }
+
                     padding: 1.25rem;
                     box-sizing: border-box;
                     display: flex;
@@ -191,6 +208,10 @@
                 img {
                     @media screen and (max-width: 640px) {
                         width: 10rem;
+                    }
+
+                    @media screen and (max-width: 480px) {
+                        width: 7rem;
                     }
 
                     width: 15rem;
