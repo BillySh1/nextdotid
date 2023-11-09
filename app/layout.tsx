@@ -31,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${title_font.variable} ${text_font.variable} `}>
-        <Navbar />
-        {children}
-        <Footer />
+        <div className="app-container">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

@@ -4,9 +4,14 @@ import Button from "./Button";
 import SVG from "react-inlinesvg";
 import { scrollPartners } from "@/utils/constants";
 import useMatchBreakpoints from "@/utils/hooks";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
   const { isMobile } = useMatchBreakpoints();
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    setMobile(isMobile);
+  }, [isMobile]);
   return (
     <div className="hero">
       <div className="float-banner">
@@ -30,10 +35,10 @@ export default function Hero() {
         >
           Wallet Address
         </div>
-        <div className="hero-title">For Mass {isMobile && <br/>} Adoption</div>
+        <div className="hero-title">For Mass {mobile && <br />} Adoption</div>
         <div className="sub-title">
-          Plug in the largest identity graph {isMobile && <br/>} across Web2 and Web3 <br /> in 5
-          seconds.
+          Plug in the largest identity graph {mobile && <br />} across Web2 and
+          Web3 <br /> in 5 seconds.
         </div>
         <div className="btn-group">
           <Link
