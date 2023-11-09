@@ -1,35 +1,74 @@
+"use client";
+import useMatchBreakpoints from "@/utils/hooks";
+import { useEffect, useState } from "react";
+
 export default function UseCases() {
+  const { isMobile } = useMatchBreakpoints();
+  const [mobile, setMobile] = useState(false);
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    setMobile(isMobile);
+  }, [isMobile]);
+  const worksMap = [
+    {
+      key: "Create",
+      title: "Create",
+      content:
+        "Create a decentralized identity with Next.ID Avatar with Proof Service",
+      img: "imgs/cases/case-1.svg",
+    },
+    {
+      key: "Link",
+      title: "Link",
+      content:
+        "Use Avatar signature to securely link to Twitter, ETH, ENS, Discord identities with confidence, updating metadata on KV Service",
+      img: "imgs/cases/case-2.svg",
+    },
+    {
+      key: "Explore",
+      title: "Explore",
+      content:
+        "Analyze social graphs, recognize trends, and opportunities with Relation Service",
+      img: "imgs/cases/case-3.svg",
+    },
+  ];
   return (
     <div className="cases">
       <div className="title">
         <span>How</span> It Works
       </div>
-      <div className="row">
-        <div className="item">
-          <img src="/imgs/cases/case-1.svg" alt="" />
-          <div className="case-title">Create</div>
-          <div className="case-content">
-            Create a decentralized identity with Next.ID Avatar with Proof
-            Service
+      {(!mobile && (
+        <div className="row">
+          {worksMap.map((x) => {
+            return (
+              <div key={x.key} className="item">
+                <img src={x.img} alt="" />
+                <div className="case-title">{x.title}</div>
+                <div className="case-content">{x.content}</div>
+              </div>
+            );
+          })}
+        </div>
+      )) || (
+        <div className="row">
+          <div className="item">
+            <img src={worksMap[index].img} alt="" />
+            <div className="case-title">{worksMap[index].title}</div>
+            <div className="case-content">{worksMap[index].content}</div>
+          </div>
+          <div className="controls">
+            {worksMap.map((x, idx) => {
+              return (
+                <div
+                  onClick={() => setIndex(idx)}
+                  key={`control_${x.key}`}
+                  className={`control ${index === idx ? "active" : ""}`}
+                ></div>
+              );
+            })}
           </div>
         </div>
-        <div className="item">
-          <img src="/imgs/cases/case-2.svg" alt="" />
-          <div className="case-title">Link</div>
-          <div className="case-content">
-            Use Avatar signature to securely link to Twitter, ETH, ENS, Discord
-            identities with confidence, updating metadata on KV Service
-          </div>
-        </div>
-        <div className="item">
-          <img src="/imgs/cases/case-3.svg" alt="" />
-          <div className="case-title">Explore</div>
-          <div className="case-content">
-            Analyze social graphs, recognize trends, and opportunities with
-            Relation Service
-          </div>
-        </div>
-      </div>
+      )}
       <div className="intro">
         <div className="left">
           <div className="left-title">
