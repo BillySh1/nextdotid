@@ -73,6 +73,18 @@
                     justify-content: space-between;
                 }
 
+                .icon-badge {
+                    position: absolute;
+                    width: 3.75rem;
+                    height: 3.75rem;
+                    top: 1.875rem;
+                    right: -1.25rem;
+                    display: none;
+
+                 
+                }
+
+                position: relative;
                 display: flex;
                 height: 20rem;
                 padding: 1rem 0.625rem;
@@ -116,8 +128,6 @@
                 }
 
                 .label-content {
-
-
                     font-size: 1.125rem;
                     font-style: normal;
                     font-weight: 300;
@@ -128,10 +138,19 @@
 
             .label-1 {
                 background-color: $blue-3;
+
+                .icon-badge {
+                    right: 1.25rem;
+                }
+
             }
 
             .label-2 {
                 background-color: $golden-1;
+
+                .label-title-container {
+                    flex-direction: row-reverse;
+                }
             }
 
             .label-3 {
@@ -150,12 +169,16 @@
                 }
 
                 input:checked~div {
+
                     @media screen and (max-width: 768px) {
                         padding: 2rem 3rem;
                     }
 
                     @media screen and (max-width: 600px) {
                         padding: 1.875rem 1rem;
+                        .icon-badge{
+                            display: block;
+                        }
                     }
 
                     width: fit-content;
@@ -164,6 +187,7 @@
                     align-items: flex-start;
 
                     .label-title-container {
+                        flex-direction: row;
                         justify-content: unset;
                         align-items: center;
                         gap: .5rem;
@@ -179,7 +203,6 @@
                         @media screen and (max-width: 600px) {
                             font-size: 2.5rem;
                         }
-
 
                         writing-mode: unset;
                         text-align: center;

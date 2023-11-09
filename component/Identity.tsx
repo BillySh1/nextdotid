@@ -67,6 +67,7 @@ export default function Identity() {
               checked={active === 0}
             />
             <div className="label label-1">
+            <img className="icon-badge" src="imgs/identity/badge-1.svg" alt="" />
               <div className="label-title-container">
                 {" "}
                 <div className="num">01</div>
@@ -84,6 +85,7 @@ export default function Identity() {
               checked={active === 1}
             />
             <div className="label label-2">
+            <img className="icon-badge" src="imgs/identity/badge-2.svg" alt="" />
               <div className="label-title-container">
                 <div className="num">02</div>
                 <div className="label-title">Secure.</div>
@@ -101,9 +103,17 @@ export default function Identity() {
               checked={active === 2}
             />
             <div className="label label-3">
+              <img className="icon-badge" src="imgs/identity/badge-3.svg" alt="" />
               <div className="label-title-container">
                 <div className="num">03</div>
-                <div className="label-title">Comprehensive.</div>
+                <div
+                  className="label-title"
+                  style={{
+                    fontSize: active === 2 ? "1.75rem" : "unset",
+                  }}
+                >
+                  Comprehensive.
+                </div>
               </div>
 
               <div className="label-content">
