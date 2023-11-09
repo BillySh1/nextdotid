@@ -53,7 +53,7 @@ export default function Apps() {
           {appsMap.map((x, idx) => {
             return (
               <div key={x.key} className="item">
-                <img src="/imgs/apps/app-1.svg" alt="" />
+                <img src={x.img} alt="" />
                 <div className="app-title">{x.title}</div>
                 <div className="app-content">{x.content}</div>
               </div>
