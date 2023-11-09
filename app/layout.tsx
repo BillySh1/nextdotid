@@ -27,9 +27,10 @@ export const metadata: Metadata = {
     canonical: `/`,
   },
   openGraph: {
+    title:'Next.ID',
     type: "website",
     url: `/`,
-    siteName: "Next.ID",
+    siteName: "Next.ID Interface",
   },
   twitter: {
     title: 'Next.ID',
