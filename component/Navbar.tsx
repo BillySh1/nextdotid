@@ -29,7 +29,7 @@ export default function Navbar() {
   }, [showOverlay, isMobile]);
   return !mobile ? (
     <div className="navbar">
-      <Link href={"/"} onClick={() => setShowOverlay(false)}>
+      <Link href={"/"}>
         <Image
           width={125}
           height={32}
@@ -54,7 +54,7 @@ export default function Navbar() {
     </div>
   ) : (
     <div className="navbar">
-      <Link href={"/"}>
+      <Link href={"/"} onClick={() => setShowOverlay(false)}>
         <SVG
           width={60}
           height={32}
@@ -79,7 +79,7 @@ export default function Navbar() {
         ref={mobileMenu}
         className={`overlay ${showOverlay ? "active-overlay" : ""}`}
       >
-        <Link href={"/"}>
+        <Link href={"/"} onClick={() => setShowOverlay(false)}>
           <SVG className="logo" src="imgs/menu/mobile_logo_long.svg" />
         </Link>
         <div className="mobile-menu">

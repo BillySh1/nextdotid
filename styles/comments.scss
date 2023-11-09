@@ -73,12 +73,14 @@
                 @media screen and (max-width: 960px){
                     width: 100%;
                     font-size: .8rem;
-                    min-width: unset;
                 }
                 @media screen and (max-width: 600px){
                     width: 100%;
                     font-size: .8rem;
-                    min-width: unset;
+                }
+                @media screen and (max-width: 380px){
+                    width: 100%;
+                    font-size: .6rem;
                 }
                 background: linear-gradient(192.04deg, #EECB50 5.45%, #70D7E6 78.15%);
                 font-family: var(--font-title);

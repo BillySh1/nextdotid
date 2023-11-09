@@ -23,7 +23,16 @@ export default function Footer() {
               <div className="grid-item ">Product</div>
               {isMobile ? (
                 <div className="subtitle">
-                  <div> Universal Profile SDK</div>
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                    }}
+                    href="https://api.web3.bio"
+                    target="_blank"
+                  >
+                    {" "}
+                    Universal Profile SDK 
+                  </Link>
                   <Link href={"https://web3.bio"} target="_blank">
                     Web3 Bio
                   </Link>
@@ -76,7 +85,11 @@ export default function Footer() {
               Brand Guidelines
             </Link>
           </div>
-          <div className="link">
+          <Link
+            href={"https://mirror.xyz/nextid.eth"}
+            target="_blank"
+            className="link"
+          >
             <span>Join the Community</span>
             <Image
               className="arrow"
@@ -85,13 +98,13 @@ export default function Footer() {
               src={"imgs/arrow-right.svg"}
               alt=""
             />
-          </div>
+          </Link>
         </div>
         <div className="divider" />
         <div className="bottom">
           <div>Copyright 2023 © Next.ID | All rights reserved</div>
           <div className="icons">
-            <Link href={"https://twitter.com/NextDotID"}>
+            <Link href={"https://twitter.com/NextDotID"} target="_blank">
               <Image
                 className="icon"
                 width={32}
@@ -101,7 +114,7 @@ export default function Footer() {
               />
             </Link>
 
-            <Link href={"https://twitter.com/NextDotID"}>
+            <Link href={"https://github.com/NextDotID"} target="_blank">
               <Image
                 className="icon"
                 width={32}
@@ -110,7 +123,7 @@ export default function Footer() {
                 alt=""
               />
             </Link>
-            <Link href={"https://twitter.com/NextDotID"}>
+            <Link href={"https://medium.com/@Next.ID"} target="_blank">
               <Image
                 className="icon"
                 width={32}
@@ -119,7 +132,7 @@ export default function Footer() {
                 alt=""
               />
             </Link>
-            <Link href={"https://twitter.com/NextDotID"}>
+            <Link href={"https://t.me/NextDotIDofficial"} target="_blank">
               <Image
                 className="icon"
                 width={32}
