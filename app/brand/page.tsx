@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/component/Button";
 import Link from "next/link";
 import SVG from "react-inlinesvg";
@@ -202,7 +203,7 @@ export default function BrandPage() {
               <div key={x.key} className="card">
                 <img
                   className="gradient"
-                  src={`imgs/brand/color${idx}.png`}
+                  src={`imgs/brand/gradient-${idx + 1}.png`}
                   alt=""
                 />
                 <div className="gradient-content">
@@ -252,16 +253,23 @@ export default function BrandPage() {
                         })}
                     </div>
                   </div>
-                  <Button variant="secondary">
-                    PNG <SVG src="imgs/brand/download.svg" />
-                  </Button>
+                  <Link
+                    href={`imgs/brand/gradient-${idx + 1}.png`}
+                    target="_blank"
+                    download
+                  >
+                    <Button variant="secondary">
+                      PNG <SVG src="imgs/brand/download.svg" />
+                    </Button>
+                  </Link>
+
                   <div className="code">
                     <p>{x.key} </p>
                     <Clipboard
                       component="div"
                       className="action"
                       data-clipboard-text={x.key}
-                      onSuccess={()=>{}}
+                      onSuccess={() => {}}
                     >
                       <SVG width={16} height={16} src="imgs/brand/copy.svg" />
                     </Clipboard>
@@ -276,7 +284,7 @@ export default function BrandPage() {
         <div className="title">
           <div>Assets</div>
           <Button variant="primary">
-            <Link href={""}>Download Assets</Link>{" "}
+            <Link href={"#"}>Download Assets</Link>{" "}
             <SVG src="imgs/brand/download.svg" />
           </Button>
         </div>
@@ -286,12 +294,17 @@ export default function BrandPage() {
             <div className="ctx">
               <div className="ctx-title">Logomark</div>
               <div className="flex">
-                <Button variant="secondary">
-                  PNG <SVG src="imgs/brand/download.svg" />
-                </Button>
-                <Button variant="secondary">
-                  SVG <SVG src="imgs/brand/download.svg" />
-                </Button>
+                <Link href={"imgs/brand/logomark.png"} target="_blank" download>
+                  <Button variant="secondary">
+                    PNG <SVG src="imgs/brand/download.svg" />
+                  </Button>
+                </Link>
+
+                <Link href={"imgs/brand/logomark.svg"} target="_blank" download>
+                  <Button variant="secondary">
+                    SVG <SVG src="imgs/brand/download.svg" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -300,12 +313,17 @@ export default function BrandPage() {
             <div className="ctx">
               <div className="ctx-title">Logotype</div>
               <div className="flex">
-                <Button variant="secondary">
-                  PNG <SVG src="imgs/brand/download.svg" />
-                </Button>
-                <Button variant="secondary">
-                  SVG <SVG src="imgs/brand/download.svg" />
-                </Button>
+                <Link href={"imgs/brand/logotype.png"} target="_blank" download>
+                  <Button variant="secondary">
+                    PNG <SVG src="imgs/brand/download.svg" />
+                  </Button>
+                </Link>
+
+                <Link href={"imgs/brand/logotype.svg"} target="_blank" download>
+                  <Button variant="secondary">
+                    SVG <SVG src="imgs/brand/download.svg" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

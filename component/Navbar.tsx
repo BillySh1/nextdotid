@@ -29,7 +29,7 @@ export default function Navbar() {
   }, [showOverlay, isMobile]);
   return !mobile ? (
     <div className="navbar">
-      <Link href={"/"}>
+      <Link href={"/"} onClick={() => setShowOverlay(false)}>
         <Image
           width={125}
           height={32}

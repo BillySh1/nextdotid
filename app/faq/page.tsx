@@ -9,7 +9,7 @@ const gridMap = [
   {
     key: 1,
     ctx: () => (
-      <div className="grid-item grid-1">
+      <div key={`Step_1`} className="grid-item grid-1">
         <div className="grid-title">
           Step 1:
           <br /> Initiate the link
@@ -23,7 +23,7 @@ const gridMap = [
   {
     key: 2,
     ctx: () => (
-      <div className="grid-item grid-2">
+      <div key={`Step_2`} className="grid-item grid-2">
         <div className="grid-title">
           Step 2: Sign a message with your Next.ID private key
         </div>
@@ -39,7 +39,7 @@ const gridMap = [
   {
     key: 3,
     ctx: () => (
-      <div className="grid-item grid-3">
+      <div key={`Step_3`} className="grid-item grid-3">
         <div className="grid-title">
           Step 3: Post the signature on selected platforms like Twitter or
           Discord
@@ -57,7 +57,7 @@ const gridMap = [
   {
     key: 4,
     ctx: () => (
-      <div className="grid-item grid-4">
+      <div key={`Step_4`} className="grid-item grid-4">
         <div className="grid-title">
           Step 5:
           <br /> Verify the link
@@ -74,7 +74,7 @@ const gridMap = [
   {
     key: 5,
     ctx: () => (
-      <div className="grid-item grid-5">
+      <div key={`Step_5`} className="grid-item grid-5">
         <div className="grid-title">Step 6: Store the verified link</div>
         <div className="grid-content">
           Once the link has been verified, Next.ID records the successful link
@@ -87,7 +87,7 @@ const gridMap = [
   {
     key: 6,
     ctx: () => (
-      <div className="grid-item grid-6">
+      <div key={`Step_6`} className="grid-item grid-6">
         <div className="grid-title">
           Step 4:
           <br /> Verify the link
