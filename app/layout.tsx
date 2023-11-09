@@ -18,23 +18,24 @@ export const title_font = Archivo({
 
 // todo: maintain seo issues
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://next.id'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "https://next.id"),
   robots: "index, follow",
 
-  title: 'Next.ID',
-  description:'An Open, Connected, Self-governed Socioverse',
+  title: "Next.ID",
+  description: "An Open, Connected, Self-governed Socioverse",
   alternates: {
     canonical: `/`,
   },
   openGraph: {
-    title:'Next.ID',
+    title: "Next.ID",
+    description: "An Open, Connected, Self-governed Socioverse",
     type: "website",
     url: `/`,
     siteName: "Next.ID Interface",
   },
   twitter: {
-    title: 'Next.ID',
-    description:'An Open, Connected, Self-governed Socioverse',
+    title: "Next.ID",
+    description: "An Open, Connected, Self-governed Socioverse",
     site: "@NextDotID",
     creator: "@NextDotID",
   },
