@@ -42,10 +42,6 @@
 
     .faq-item {
         @media screen and (max-width: 1280px) {
-            width: 70%;
-        }
-
-        @media screen and (max-width: 960px) {
             width: 80%;
         }
 
@@ -57,11 +53,13 @@
             width: 100%;
         }
 
-        width: 55%;
+        width: 100%;
+        max-width: 47.5rem;
         border-bottom: 1px solid var(--Blue-Black, #030227);
 
         .active {
             .faq-title {
+                width: 100%;
                 color: $blue-1 !important;
 
                 span {

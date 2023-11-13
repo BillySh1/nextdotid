@@ -396,7 +396,7 @@ export default function FAQ() {
     },
   ];
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-between">
+    <>
       {showToTop && (
         <SVG
           onClick={() => {
@@ -469,6 +469,6 @@ export default function FAQ() {
           </Link>
         </div>
       </div>
-    </main>
+    </>
   );
 }
