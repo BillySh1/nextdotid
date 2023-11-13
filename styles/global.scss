@@ -41,7 +41,7 @@ body {
     }
 }
 
-.app-container{
+.app-container {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -81,6 +81,11 @@ body {
 }
 
 .overlay {
+
+    @supports (height: 100dvh) {
+        height: 100dvh;
+    }
+
     position: absolute;
     background-color: $blue-1;
     right: 0;
@@ -108,8 +113,9 @@ body {
         height: 2rem;
         width: auto;
         cursor: pointer;
+
         @media screen and (max-width: 480px) {
-           height: 1.5rem;
+            height: 1.5rem;
         }
     }
 
@@ -140,6 +146,7 @@ body {
                 @media screen and (max-width: 480px) {
                     font-size: .8rem;
                 }
+
                 color: $white-2;
                 font-size: 1rem;
                 font-weight: 300;
@@ -163,6 +170,7 @@ body {
             color: $white-1;
             font-size: 1.375rem;
             font-weight: 400;
+
             @media screen and (max-width: 480px) {
                 font-size: 1.125rem;
             }

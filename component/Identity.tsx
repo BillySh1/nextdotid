@@ -116,12 +116,21 @@ export default function Identity() {
                 src="imgs/identity/badge-3.svg"
                 alt=""
               />
-              <div className="label-title-container">
+              <div
+                className={`label-title-container ${
+                  active === 2 ? "active" : ""
+                }`}
+              >
                 <div className="num">03</div>
                 <div
                   className="label-title"
                   style={{
-                    fontSize: active === 2 ? "1.75rem" : "unset",
+                    fontSize:
+                      active === 2
+                        ? "1.75rem"
+                        : isMobile
+                        ? "unset"
+                        : "1.375rem",
                   }}
                 >
                   Comprehensive.

@@ -125,7 +125,7 @@ export default function Navbar() {
           </Link>
           <div className="divider" />
           <Link
-            href={'"https://mirror.xyz/nextid.eth"'}
+            href={'https://mirror.xyz/nextid.eth'}
             target="_blank"
             className="mobile-menu-item"
           >

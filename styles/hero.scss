@@ -1,4 +1,9 @@
 .hero {
+    @supports (height: 100dvh) {
+        max-height: calc(100dvh - 5rem);
+        ;
+    }
+
     position: relative;
     width: 100%;
     height: calc(100vh - 5rem);
@@ -116,6 +121,7 @@
             width: 70vmax;
             top: 10%;
         }
+
         @media screen and (max-width:480px) {
             right: -55%;
             width: 65vmax;
@@ -165,6 +171,7 @@
                     height: 1.5rem;
 
                 }
+
                 height: 2.25rem;
                 width: auto;
             }
