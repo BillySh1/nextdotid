@@ -3,6 +3,7 @@ import { Roboto_Flex, Archivo } from "next/font/google";
 import Footer from "@/component/Footer";
 import Navbar from "@/component/Navbar";
 import "../styles/global.scss";
+import "swiper/scss";
 
 export const text_font = Roboto_Flex({
   subsets: ["latin", "latin-ext"],

@@ -1,14 +1,18 @@
 "use client";
 import useMatchBreakpoints from "@/utils/hooks";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function UseCases() {
   const { isMobile } = useMatchBreakpoints();
   const [mobile, setMobile] = useState(false);
   const [index, setIndex] = useState(0);
+  const [swiper, setSwiper] = useState<any>(null);
   useEffect(() => {
     setMobile(isMobile);
   }, [isMobile]);
+  const ref = useRef<HTMLDivElement>(null);
+
   const worksMap = [
     {
       key: "Create",
@@ -32,8 +36,9 @@ export default function UseCases() {
       img: "imgs/cases/case-3.svg",
     },
   ];
+  
   return (
-    <div className="cases">
+    <div className="cases" ref={ref}>
       <div className="title">
         <span>How</span> It Works
       </div>
@@ -50,24 +55,38 @@ export default function UseCases() {
           })}
         </div>
       )) || (
-        <div className="row">
-          <div className="item">
-            <img src={worksMap[index].img} alt="" />
-            <div className="case-title">{worksMap[index].title}</div>
-            <div className="case-content">{worksMap[index].content}</div>
-          </div>
+        <Swiper
+          onSwiper={setSwiper}
+          onActiveIndexChange={(v) => {
+            setIndex(v.activeIndex);
+          }}
+          wrapperClass="swiper-row"
+          slidesPerView={"auto"}
+          normalizeSlideIndex
+          centeredSlides={true}
+          width={ref.current?.clientWidth}
+        >
+          {worksMap.map((x) => (
+            <SwiperSlide className="slide-item" key={`slide_${x.key}`}>
+              <img src={x.img} alt="" />
+              <div className="case-title">{x.title}</div>
+              <div className="case-content">{x.content}</div>
+            </SwiperSlide>
+          ))}
           <div className="controls">
             {worksMap.map((x, idx) => {
               return (
                 <div
-                  onClick={() => setIndex(idx)}
+                  onClick={() => {
+                    swiper.slideTo(idx);
+                  }}
                   key={`control_${x.key}`}
                   className={`control ${index === idx ? "active" : ""}`}
                 ></div>
               );
             })}
           </div>
-        </div>
+        </Swiper>
       )}
       <div className="intro">
         <div className="left">
