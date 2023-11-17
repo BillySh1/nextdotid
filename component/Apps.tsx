@@ -1,6 +1,6 @@
 "use client";
 import useMatchBreakpoints from "@/utils/hooks";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Apps() {
@@ -8,12 +8,11 @@ export default function Apps() {
   const [mobile, setMobile] = useState(false);
   const [index, setIndex] = useState(0);
   const [swiper, setSwiper] = useState<any>(null);
+  const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     setMobile(isMobile);
   }, [isMobile]);
-  useEffect(() => {
-    setMobile(isMobile);
-  }, [isMobile]);
+
   const appsMap = [
     {
       key: "Proof Service",
@@ -41,7 +40,7 @@ export default function Apps() {
     },
   ];
   return (
-    <div className="apps">
+    <div className="apps" ref={ref}>
       <div className="title-container">
         <div className="title">
           <span>Future-proof</span> Your Apps
@@ -75,6 +74,7 @@ export default function Apps() {
           slidesPerView={"auto"}
           normalizeSlideIndex
           centeredSlides={true}
+          width={ref.current?.clientWidth}
         >
           {appsMap.map((x) => (
             <SwiperSlide className="slide-item" key={`slide_${x.key}`}>
