@@ -45,12 +45,7 @@ export default function Hero() {
             href={"https://cgs3aixtxgl.typeform.com/to/byvR85PL"}
             target="_blank"
           >
-            <Button
-              variant="primary"
-              style={{
-                textDecoration: "underline",
-              }}
-            >
+            <Button variant="primary">
               {"LET'S TALK"}
               <SVG width={20} height={20} src="imgs/arrow-right-up.svg" />
             </Button>

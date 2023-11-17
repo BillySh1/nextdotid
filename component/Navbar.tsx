@@ -23,6 +23,13 @@ export default function Navbar() {
         return;
       }
     });
+    if (showOverlay) {
+      document.getElementsByClassName("app-container")[0].className =
+        "app-container disable-scroll";
+    } else {
+      document.getElementsByClassName("app-container")[0].className =
+        "app-container";
+    }
     return document.removeEventListener("click", () => {
       setShowOverlay(false);
     });
@@ -75,6 +82,7 @@ export default function Navbar() {
         width={24}
         height={24}
       />
+      {showOverlay && <div className="mask" />}
       <div
         ref={mobileMenu}
         className={`overlay ${showOverlay ? "active-overlay" : ""}`}
@@ -125,7 +133,7 @@ export default function Navbar() {
           </Link>
           <div className="divider" />
           <Link
-            href={'https://mirror.xyz/nextid.eth'}
+            href={"https://mirror.xyz/nextid.eth"}
             target="_blank"
             className="mobile-menu-item"
           >

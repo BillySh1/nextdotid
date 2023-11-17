@@ -194,7 +194,7 @@ export default function BrandPage() {
           })}
         </div>
         <div className="flex-title">
-          <div className="title">Gradients</div>
+          <div className="title gradient">Gradients</div>
           <div className="line" />
         </div>
         <div className="wrapper center">

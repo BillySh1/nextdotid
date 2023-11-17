@@ -109,7 +109,7 @@ const gridMap = [
 ];
 
 export default function FAQ() {
-  const [activeIndexes, setActiveIndexes] = useState([0]);
+  const [activeIndexes, setActiveIndexes] = useState<Array<number>>([]);
   const [index, setIndex] = useState(0);
   const [mobile, setMobile] = useState(false);
   const [showToTop, setShowToTop] = useState(false);

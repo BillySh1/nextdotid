@@ -79,7 +79,7 @@ export default function Footer() {
               Community
             </Link>
             <Link href={"/story"} className="grid-item item-5">
-              Out Story
+              Our Story
             </Link>
             <Link href={"/brand"} className="grid-item item-6">
               Brand Guidelines
