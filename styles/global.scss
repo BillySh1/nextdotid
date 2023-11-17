@@ -623,7 +623,11 @@ body {
     align-items: flex-start;
     gap: 3.125rem;
     box-sizing: border-box;
-
+    .swiper{
+        .swiper-wrapper{
+            margin: 0;
+        }
+    }
     .title {
         @media screen and (max-width:768px) {
             font-size: 2rem;

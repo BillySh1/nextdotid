@@ -173,13 +173,14 @@
                         flex-direction: row-reverse;
                     }
                 }
-                .active{
+
+                .active {
                     flex-direction: column;
                 }
-          
+
             }
 
-    
+
 
             label {
                 display: block;
@@ -298,45 +299,49 @@
             flex-direction: column;
         }
 
-        .card-item {
-            @media screen and (max-width: 600px) {
-                gap: 1.5rem;
-            }
 
-            display: flex;
-            width: 22.5rem;
-            padding: 1.5rem;
-            box-sizing: border-box;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 1rem;
-            background: $white-2;
-            border: 1px solid $blue-1;
-            min-height: 12.5rem;
+    }
 
-            .card-icon {
-                width: 1.5rem;
-                height: 1.5rem;
-            }
+    .card-item {
+        @media screen and (max-width: 600px) {
+            gap: 1.5rem;
+            width: unset;
+            max-width: 22.5rem;
+        }
 
-            .card-title {
-                font-family: var(--font-title);
-                font-variation-settings: 'wdth'150;
-                color: $blue-2;
-                font-size: 1.375rem;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
-            }
+        display: flex;
+        width: 22.5rem;
+        padding: 1.5rem;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        background: $white-2;
+        border: 1px solid $blue-1;
+        min-height: 12.5rem;
 
-            .card-content {
-                color: $black-1;
-                font-size: 1.125rem;
-                font-weight: 300;
-                line-height: 150%;
-                /* 1.6875rem */
-            }
+        .card-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .card-title {
+            font-family: var(--font-title);
+            font-variation-settings: 'wdth'150;
+            color: $blue-2;
+            font-size: 1.375rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        .card-content {
+            color: $black-1;
+            font-size: 1.125rem;
+            font-weight: 300;
+            line-height: 150%;
+            /* 1.6875rem */
         }
     }
 }

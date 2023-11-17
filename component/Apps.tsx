@@ -1,11 +1,16 @@
 "use client";
 import useMatchBreakpoints from "@/utils/hooks";
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Apps() {
   const { isMobile } = useMatchBreakpoints();
   const [mobile, setMobile] = useState(false);
   const [index, setIndex] = useState(0);
+  const [swiper, setSwiper] = useState<any>(null);
+  useEffect(() => {
+    setMobile(isMobile);
+  }, [isMobile]);
   useEffect(() => {
     setMobile(isMobile);
   }, [isMobile]);
@@ -61,24 +66,37 @@ export default function Apps() {
           })}
         </div>
       ) : (
-        <div className="row">
-          <div className="item">
-            <img src={appsMap[index].img} alt="" />
-            <div className="app-title">{appsMap[index].title}</div>
-            <div className="app-content">{appsMap[index].content}</div>
-          </div>
+        <Swiper
+          onSwiper={setSwiper}
+          onActiveIndexChange={(v) => {
+            setIndex(v.activeIndex);
+          }}
+          wrapperClass="swiper-row"
+          slidesPerView={"auto"}
+          normalizeSlideIndex
+          centeredSlides={true}
+        >
+          {appsMap.map((x) => (
+            <SwiperSlide className="slide-item" key={`slide_${x.key}`}>
+              <img src={x.img} alt="" />
+              <div className="case-title">{x.title}</div>
+              <div className="case-content">{x.content}</div>
+            </SwiperSlide>
+          ))}
           <div className="controls">
             {appsMap.map((x, idx) => {
               return (
                 <div
-                  onClick={() => setIndex(idx)}
+                  onClick={() => {
+                    swiper.slideTo(idx);
+                  }}
                   key={`control_${x.key}`}
                   className={`control ${index === idx ? "active" : ""}`}
                 ></div>
               );
             })}
           </div>
-        </div>
+        </Swiper>
       )}
     </div>
   );
