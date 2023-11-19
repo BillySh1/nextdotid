@@ -10,13 +10,18 @@ import Identity from "@/component/Identity";
 
 export default function Home() {
   return (
-    <div className="h-min-screen">
+    <div
+      className="h-min-screen"
+      style={{
+        width: "100%",
+      }}
+    >
       <Hero />
       <Apps />
       <Counts />
       <Cases />
       <Web3bio />
-      <Identity/>
+      <Identity />
       <Join />
       <Partners />
       <Comments />
