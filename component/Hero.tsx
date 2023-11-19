@@ -13,7 +13,7 @@ export default function Hero() {
     setMobile(isMobile);
   }, [isMobile]);
 
-  const heroIconWidth = window?.innerWidth <= 768 ? 24 : 48;
+  const heroIconWidth = window?.innerWidth <= 768 ? 30 : 48;
   return (
     <div className="hero">
       <div className="float-banner">
