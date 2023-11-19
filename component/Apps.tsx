@@ -1,6 +1,6 @@
 "use client";
 import useMatchBreakpoints from "@/utils/hooks";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Apps() {
@@ -8,7 +8,6 @@ export default function Apps() {
   const [mobile, setMobile] = useState(false);
   const [index, setIndex] = useState(0);
   const [swiper, setSwiper] = useState<any>(null);
-  const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     setMobile(isMobile);
   }, [isMobile]);
@@ -40,7 +39,7 @@ export default function Apps() {
     },
   ];
   return (
-    <div className="apps" ref={ref}>
+    <div className="apps">
       <div className="title-container">
         <div className="title">
           <span>Future-proof</span> Your Apps
@@ -65,24 +64,28 @@ export default function Apps() {
           })}
         </div>
       ) : (
-        <Swiper
-          onSwiper={setSwiper}
-          onActiveIndexChange={(v) => {
-            setIndex(v.activeIndex);
-          }}
-          wrapperClass="swiper-row"
-          slidesPerView={"auto"}
-          normalizeSlideIndex
-          centeredSlides={true}
-          width={ref.current?.clientWidth}
-        >
-          {appsMap.map((x) => (
-            <SwiperSlide className="slide-item" key={`slide_${x.key}`}>
-              <img src={x.img} alt="" />
-              <div className="case-title">{x.title}</div>
-              <div className="case-content">{x.content}</div>
-            </SwiperSlide>
-          ))}
+        <div className="row app-row">
+          <Swiper
+            style={{
+              width: "100%",
+            }}
+            onSwiper={setSwiper}
+            onActiveIndexChange={(v) => {
+              setIndex(v.activeIndex);
+            }}
+            wrapperClass="swiper-row"
+            slidesPerView={"auto"}
+            normalizeSlideIndex
+            centeredSlides={true}
+          >
+            {appsMap.map((x) => (
+              <SwiperSlide className="slide-item" key={`slide_${x.key}`}>
+                <img src={x.img} alt="" />
+                <div className="case-title">{x.title}</div>
+                <div className="case-content">{x.content}</div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
           <div className="controls">
             {appsMap.map((x, idx) => {
               return (
@@ -96,7 +99,7 @@ export default function Apps() {
               );
             })}
           </div>
-        </Swiper>
+        </div>
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 import useMatchBreakpoints from "@/utils/hooks";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const cardsMapping = [
@@ -45,12 +45,11 @@ export default function Identity() {
   const [swiper, setSwiper] = useState<any>(null);
   const { isMobile } = useMatchBreakpoints();
   const [mobile, setMobile] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     setMobile(isMobile);
   }, [isMobile]);
   return (
-    <div className="identity" ref={ref}>
+    <div className="identity">
       <div className="title-container">
         <div className="title">
           Radical Identity <span>Solutions</span> for <span>Radical Apps</span>
@@ -194,24 +193,28 @@ export default function Identity() {
           })}
         </div>
       ) : (
-        <Swiper
-          onSwiper={setSwiper}
-          onActiveIndexChange={(v) => {
-            setIndex(v.activeIndex);
-          }}
-          wrapperClass="swiper-row"
-          slidesPerView={"auto"}
-          normalizeSlideIndex
-          centeredSlides={true}
-          width={ref.current?.clientWidth}
-        >
-          {cardsMapping.map((x) => (
-            <SwiperSlide className="card-item" key={`slide_${x.key}`}>
-              <img className="card-icon" src={x.icon} alt="" />
-              <div className="card-title">{x.title}</div>
-              <div className="card-content">{x.content}</div>
-            </SwiperSlide>
-          ))}
+        <div className="cards">
+          <Swiper
+            style={{
+              width: "100%",
+            }}
+            onSwiper={setSwiper}
+            onActiveIndexChange={(v) => {
+              setIndex(v.activeIndex);
+            }}
+            wrapperClass="swiper-row"
+            slidesPerView={"auto"}
+            normalizeSlideIndex
+            centeredSlides={true}
+          >
+            {cardsMapping.map((x) => (
+              <SwiperSlide className="card-item" key={`slide_${x.key}`}>
+                <img className="card-icon" src={x.icon} alt="" />
+                <div className="card-title">{x.title}</div>
+                <div className="card-content">{x.content}</div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
           <div className="controls">
             {cardsMapping.map((x, idx) => {
               return (
@@ -225,7 +228,7 @@ export default function Identity() {
               );
             })}
           </div>
-        </Swiper>
+        </div>
       )}
     </div>
   );

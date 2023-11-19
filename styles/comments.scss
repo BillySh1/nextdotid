@@ -17,6 +17,10 @@
         align-items: center;
     }
 
+    @media screen and (max-width: 600px) {
+        padding: 3.75rem 1rem;
+    }
+
     .item {
         @media screen and (max-width: 960px){
             height: 25rem;

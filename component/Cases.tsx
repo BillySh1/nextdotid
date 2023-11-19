@@ -1,6 +1,6 @@
 "use client";
 import useMatchBreakpoints from "@/utils/hooks";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function UseCases() {
@@ -11,7 +11,6 @@ export default function UseCases() {
   useEffect(() => {
     setMobile(isMobile);
   }, [isMobile]);
-  const ref = useRef<HTMLDivElement>(null);
 
   const worksMap = [
     {
@@ -36,9 +35,9 @@ export default function UseCases() {
       img: "imgs/cases/case-3.svg",
     },
   ];
-  
+
   return (
-    <div className="cases" ref={ref}>
+    <div className="cases">
       <div className="title">
         <span>How</span> It Works
       </div>
@@ -55,24 +54,28 @@ export default function UseCases() {
           })}
         </div>
       )) || (
-        <Swiper
-          onSwiper={setSwiper}
-          onActiveIndexChange={(v) => {
-            setIndex(v.activeIndex);
-          }}
-          wrapperClass="swiper-row"
-          slidesPerView={"auto"}
-          normalizeSlideIndex
-          centeredSlides={true}
-          width={ref.current?.clientWidth}
-        >
-          {worksMap.map((x) => (
-            <SwiperSlide className="slide-item" key={`slide_${x.key}`}>
-              <img src={x.img} alt="" />
-              <div className="case-title">{x.title}</div>
-              <div className="case-content">{x.content}</div>
-            </SwiperSlide>
-          ))}
+        <div className="row cases-row">
+          <Swiper
+            style={{
+              width: "100%",
+            }}
+            onSwiper={setSwiper}
+            onActiveIndexChange={(v) => {
+              setIndex(v.activeIndex);
+            }}
+            wrapperClass="swiper-row"
+            slidesPerView={"auto"}
+            normalizeSlideIndex
+            centeredSlides={true}
+          >
+            {worksMap.map((x) => (
+              <SwiperSlide className="slide-item" key={`slide_${x.key}`}>
+                <img src={x.img} alt="" />
+                <div className="case-title">{x.title}</div>
+                <div className="case-content">{x.content}</div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
           <div className="controls">
             {worksMap.map((x, idx) => {
               return (
@@ -86,7 +89,7 @@ export default function UseCases() {
               );
             })}
           </div>
-        </Swiper>
+        </div>
       )}
       <div className="intro">
         <div className="left">

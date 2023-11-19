@@ -10,7 +10,7 @@ import Identity from "@/component/Identity";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <div className="h-min-screen">
       <Hero />
       <Apps />
       <Counts />
@@ -20,6 +20,6 @@ export default function Home() {
       <Join />
       <Partners />
       <Comments />
-    </main>
+    </div>
   );
 }
