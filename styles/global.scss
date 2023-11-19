@@ -71,8 +71,8 @@ body {
     @media screen and (max-width: 960px) {
         display: flex;
         padding: 0rem 1rem;
-        justify-content: space-between;
-
+        justify-content: center;
+        gap: 4rem;
         .link-btn {
             display: none;
         }
@@ -80,6 +80,14 @@ body {
         .menu-container {
             width: auto;
         }
+
+    }
+    @media screen and (max-width: 640px) {
+   
+        justify-content: space-between;
+        gap: 0;
+
+    
 
     }
 

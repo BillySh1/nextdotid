@@ -41,7 +41,9 @@ export default function Navbar() {
           width={125}
           height={32}
           className="logo"
-          src="imgs/logo.svg"
+          src={
+            window.innerWidth <= 960 ? "imgs/logo-small-colored.svg" : "imgs/logo.svg"
+          }
           alt="next.id logo"
         />
       </Link>
