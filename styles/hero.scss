@@ -50,15 +50,96 @@
         .hero-title {
             @media screen and (max-width: 768px) {
                 font-size: 2.5rem;
+                line-height: 2.5rem;
+                margin-bottom: .5rem;
             }
 
             font-family: var(--font-title);
             font-variation-settings: 'wdth'150;
-            font-size: 4.125rem;
+            font-size: 4rem;
             font-weight: 500;
-            line-height: 1.1;
+            line-height: 4rem;
             letter-spacing: -2%;
             color: $blue-1;
+        }
+
+        .roller {
+            @media screen and (max-width: 768px) {
+                height: 2.5rem;
+            }
+
+
+            height: 4.125rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .roller-text {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                @media screen and (max-width: 768px) {
+                    animation: mobile-roller 8s infinite;
+                }
+
+                animation: roller 8s infinite;
+            }
+
+            @keyframes mobile-roller {
+                0% {
+                    top: 0;
+                }
+
+                12% {
+                    top: -2.5rem;
+                }
+
+                24% {
+                    top: -5rem;
+                }
+
+                36% {
+                    top: -7.5rem;
+                }
+
+                48% {
+                    top: -10rem;
+                }
+
+                60% {
+                    top: -12.5rem;
+                }
+            }
+
+            @keyframes roller {
+                0% {
+                    top: 0;
+                }
+
+                12% {
+                    top: -4rem;
+                }
+
+                24% {
+                    top: -8rem;
+                }
+
+                36% {
+                    top: -12rem;
+                }
+
+                48% {
+                    top: -16rem;
+                }
+
+                60% {
+                    top: -20rem;
+                }
+            }
         }
 
         .sub-title {

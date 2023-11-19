@@ -12,6 +12,8 @@ export default function Hero() {
   useEffect(() => {
     setMobile(isMobile);
   }, [isMobile]);
+
+  const heroIconWidth = window?.innerWidth <= 768 ? 24 : 48;
   return (
     <div className="hero">
       <div className="float-banner">
@@ -28,12 +30,54 @@ export default function Hero() {
       <div className="hero-content">
         <div className="hero-title">{"Bridge Users'"}</div>
         <div
-          className="hero-title"
+          className="hero-title roller"
           style={{
             color: "#55B8FF",
           }}
         >
-          Wallet Address
+          <span className="roller-text">
+            Twitter{" "}
+            <SVG
+              style={{ marginLeft: "1rem" }}
+              width={heroIconWidth}
+              height={heroIconWidth}
+              src="imgs/hero/hero-twitter.svg"
+            />{" "}
+            <br />
+            ENS{" "}
+            <SVG
+              style={{ marginLeft: "1rem" }}
+              width={heroIconWidth}
+              height={heroIconWidth}
+              src="imgs/hero/hero-ens.svg"
+            />{" "}
+            <br />
+            Lens{" "}
+            <SVG
+              style={{ marginLeft: "1rem" }}
+              width={heroIconWidth}
+              height={heroIconWidth}
+              src="imgs/hero/hero-lens.svg"
+            />
+            <br />
+            Farcaster{" "}
+            <SVG
+              style={{ marginLeft: "1rem" }}
+              width={heroIconWidth}
+              height={heroIconWidth}
+              src="imgs/hero/hero-farcaster.svg"
+            />
+            <br />
+            Discord{" "}
+            <SVG
+              style={{ marginLeft: "1rem" }}
+              width={heroIconWidth}
+              height={heroIconWidth}
+              src="imgs/hero/hero-discord.svg"
+            />
+            <br />
+            Wallet Address
+          </span>
         </div>
         <div className="hero-title">For Mass {mobile && <br />} Adoption</div>
         <div className="sub-title">
