@@ -9,11 +9,14 @@ import { useEffect, useState } from "react";
 export default function Hero() {
   const { isMobile } = useMatchBreakpoints();
   const [mobile, setMobile] = useState(false);
+  const [heroIconWidth, setHeroIconWidth] = useState(48);
   useEffect(() => {
     setMobile(isMobile);
+    if (window?.innerWidth <= 768) {
+      setHeroIconWidth(30);
+    } else [setHeroIconWidth(48)];
   }, [isMobile]);
 
-  const heroIconWidth = window?.innerWidth <= 768 ? 30 : 48;
   return (
     <div className="hero">
       <div className="float-banner">

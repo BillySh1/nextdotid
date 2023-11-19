@@ -12,8 +12,15 @@ export default function Navbar() {
   const mobileMenu = useRef<any>(null);
   const [mobile, setMobile] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
+  const [logoURL, setLogoURL] = useState("imgs/logo.svg");
   useEffect(() => {
     setMobile(isMobile);
+
+    if (window?.innerWidth <= 960) {
+      setLogoURL("imgs/logo-small-colored.svg");
+    } else {
+      setLogoURL("imgs/logo.svg");
+    }
     document.addEventListener("click", (e) => {
       if (showOverlay && mobileMenu.current) {
         if (!mobileMenu.current.contains(e.target)) {
@@ -41,9 +48,7 @@ export default function Navbar() {
           width={125}
           height={32}
           className="logo"
-          src={
-            window.innerWidth <= 960 ? "imgs/logo-small-colored.svg" : "imgs/logo.svg"
-          }
+          src={logoURL}
           alt="next.id logo"
         />
       </Link>
