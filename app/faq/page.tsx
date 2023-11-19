@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import SVG from "react-inlinesvg";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const gridMap = [
   {
@@ -119,6 +120,7 @@ export default function FAQ() {
       setActiveIndexes(activeIndexes.filter((x) => x !== idx));
     }
   };
+  const [swiper, setSwiper] = useState<any>(null);
   const { isMobile } = useMatchBreakpoints();
   useEffect(() => {
     setMobile(isMobile);
@@ -215,7 +217,25 @@ export default function FAQ() {
             <div className="grid">{gridMap.map((x) => x.ctx())}</div>
           ) : (
             <div className="grid">
-              {gridMap[index].ctx()}
+              <Swiper
+                style={{
+                  width: "100%",
+                }}
+                onSwiper={setSwiper}
+                onActiveIndexChange={(v) => {
+                  setIndex(v.activeIndex);
+                }}
+                wrapperClass="swiper-row"
+                slidesPerView={"auto"}
+                normalizeSlideIndex
+                centeredSlides={true}
+              >
+                {gridMap.map((x, idx) => (
+                  <SwiperSlide className="slide-item" key={`slide_${idx}`}>
+                    {gridMap[index].ctx()}
+                  </SwiperSlide>
+                ))}
+              </Swiper>
               <div className="controls">
                 {gridMap.map((x, idx) => {
                   return (

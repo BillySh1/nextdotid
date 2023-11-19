@@ -123,6 +123,7 @@
                 grid-row-gap: 20px;
 
                 @media screen and (max-width:600px) {
+                    width: 100%;
                     display: flex;
                     grid-column-gap: unset;
                     grid-row-gap: unset;
